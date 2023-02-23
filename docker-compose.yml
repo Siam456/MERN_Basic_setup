@@ -1,0 +1,100 @@
+version: "3"
+services:
+  proxy:
+    image: nginx:alpine
+    container_name: proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: "unless-stopped"
+    depends_on:
+      - server
+      - client
+    networks:
+      - myNet
+
+  client:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - /frontend/.env.local
+    volumes:
+      - ./frontend:/app/client
+      - /app/client/node_modules
+    restart: "unless-stopped"
+    depends_on:
+      - server
+    networks:
+      - myNet
+
+  server:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    env_file:
+      - /backend/.env
+    volumes:
+      - ./backend:/app/server
+      - /app/server/node_modules
+    restart: "unless-stopped"
+    depends_on:
+      - mongo
+      - elasticsearch
+    networks:
+      - myNet
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_DATABASE: my_db
+      MONGO_INITDB_ROOT_USERNAME: siam
+      MONGO_INITDB_ROOT_PASSWORD: 12345
+    volumes:
+      - db_data:/app/data/db
+    networks:
+      - myNet
+  elasticsearch:
+    image: elasticsearch:7.9.2
+    restart: always
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - esvol:/usr/share/elasticsearch/data
+    networks:
+      - myNet
+  kibana:
+    image: kibana:7.9.2
+    restart: always
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    volumes:
+      - kibvol:/usr/share/kibana/data
+    depends_on:
+      - elasticsearch
+    networks:
+      - myNet
+
+networks:
+  myNet:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
+  esvol:
+    driver: local
+  kibvol:
+    driver: local

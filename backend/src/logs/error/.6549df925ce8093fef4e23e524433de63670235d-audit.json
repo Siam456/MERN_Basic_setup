@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\error\\.6549df925ce8093fef4e23e524433de63670235d-audit.json",
+    "files": [
+        {
+            "date": 1676445218393,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\error\\2023-02-15.log",
+            "hash": "b867a845e62e7ad9fdbd32e50d938c6ec38e57222e08415182526dbc80ac273b"
+        },
+        {
+            "date": 1676668228269,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\error\\2023-02-18.log",
+            "hash": "bd3508418dc64589cd4450dbc6ca93beed99b2ab2816e5373e5373bbc505f734"
+        },
+        {
+            "date": 1676798317132,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\error\\2023-02-19.log",
+            "hash": "9a293bc84f8ba6a3ba8e41a741178180a652b149a544e3f910baea532f0c23d9"
+        },
+        {
+            "date": 1676885238752,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\error\\2023-02-20.log",
+            "hash": "e143ba1a80bbb11c9e66682475ee8be60c87e3443fa44f39c012937ae5f21931"
+        }
+    ],
+    "hashType": "sha256"
+}

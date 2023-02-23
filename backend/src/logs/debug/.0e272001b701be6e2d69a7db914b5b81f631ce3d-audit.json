@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\debug\\.0e272001b701be6e2d69a7db914b5b81f631ce3d-audit.json",
+    "files": [
+        {
+            "date": 1676445191101,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\debug\\2023-02-15.log",
+            "hash": "8cbae5e930cfe3d76448d7a4ec1fb450eb7af55c4f37028dd116ec28573fce33"
+        },
+        {
+            "date": 1676668228244,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\debug\\2023-02-18.log",
+            "hash": "044b991fe38e5f21d3a9ad77ef42627420820a8cd8b9e850932a69caa99fd540"
+        },
+        {
+            "date": 1676798317126,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\debug\\2023-02-19.log",
+            "hash": "5f2d84df9f909d66b985d3ed98420c28a04602e924d15b67186324351ae3121c"
+        },
+        {
+            "date": 1676885238747,
+            "name": "C:\\Users\\BS747\\Desktop\\admin\\ts\\js-convo\\src\\logs\\debug\\2023-02-20.log",
+            "hash": "67c8bf9bb3661cc0d1e041ccd4c4f547132f5ce3f66b70ff1adea9689bd68e00"
+        }
+    ],
+    "hashType": "sha256"
+}
